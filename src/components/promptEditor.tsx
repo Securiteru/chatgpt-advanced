@@ -72,7 +72,7 @@ const PromptEditor = (
 
     const handleSave = async () => {
         setShowErrors(true)
-        if (nameError || textError || webResultsError || queryError) {
+        if (nameError || textError  || queryError) {
             return
         }
 
@@ -132,7 +132,7 @@ const PromptEditor = (
                 <TooltipWrapper tip={showErrors ? getTranslation(localizationKeys.placeHolderTips.webResults) : ""}>
                     <button
                         className={`wcg-btn
-                        ${showErrors && webResultsError ? "wcg-btn-error" : hasWebResultsPlaceholder ? "wcg-btn-success" : "wcg-btn-warning"}
+                        ${showErrors &&  hasWebResultsPlaceholder ? "wcg-btn-success" : "wcg-btn-warning"}
                         wcg-p-1 wcg-lowercase`}
                         onClick={() => {
                             setWebResultsError(false)
